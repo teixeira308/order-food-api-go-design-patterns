@@ -1,0 +1,29 @@
+# Binários do Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Diretório de build local
+/build/
+bin/
+
+# Arquivos temporários ou editor
+*.log
+*.out
+*.tmp
+
+# Arquivos do VS Code
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Módulos baixados (mantemos go.sum e go.mod)
+vendor/
+
+# Cache do Go (normalmente não fica na pasta, mas por precaução)
+*.cache
