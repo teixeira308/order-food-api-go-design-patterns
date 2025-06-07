@@ -48,7 +48,7 @@ A API será executada em: [http://localhost:8080](http://localhost:8080)
 ### Criar pedido regular
 
 ```bash
-curl -X POST http://localhost:8080/orders \
+curl -X POST http://localhost:8080/v1/orders \
   -H "Content-Type: application/json" \
   -d '{
     "order_type": "regular",
@@ -67,7 +67,7 @@ curl -X POST http://localhost:8080/orders \
 ### Criar pedido express
 
 ```bash
-curl -X POST http://localhost:8080/orders \
+curl -X POST http://localhost:8080/v1/orders \
   -H "Content-Type: application/json" \
   -d '{
     "order_type": "express",
