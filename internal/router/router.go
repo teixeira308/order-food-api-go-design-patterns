@@ -3,18 +3,16 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/teixeira308/order-food-api-go-design-patterns/internal/handler"
+	"github.com/teixeira308/order-food-api-go-design-patterns/internal/repository"
 )
 
-func SetupRouter() *gin.Engine {
+func SetupRouter(repo repository.OrderRepository) *gin.Engine {
 	r := gin.Default()
-
-	// Healthcheck
 	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "ok"})
 	})
+	orderHandler := handler.NewOrderHandler(repo)
 
-	// Rotas da API
-	handler.RegisterOrderRoutes(r)
-
+	handler.RegisterOrderRoutes(r, orderHandler)
 	return r
 }
